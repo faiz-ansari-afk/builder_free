@@ -1,9 +1,26 @@
+@font-face {
+  src: url("./reliable_demo-webfont.woff");
+  font-family: "reliableDemo";
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+:root {
+  --light-weight: 200;
+  --medium-weight: 400;
+  --bold-weight: 600;
+  --primary-color: #fdcc0d;
+  --reliable-demo: "reliableDemo";
+  --montserrat:"Montserrat";
+}
+*::before, *::after{
+  margin:0;
+  box-sizing:border-box;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 62.5%;
+  /* width: 90vw; */
 }
 
 a {
@@ -13,4 +30,166 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* main */
+main{
+  margin-left: 4.5rem;
+}
+/* -------------------------------- Vertical Navbar ------------------------------- */
+.v-navbar{
+  width: 4.5rem;
+  height:100vh;
+  position: fixed;
+  background:black;
+}
+.v-navbar div a {
+
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin: 1.3rem;
+  font-size: 1.2rem;
+}
+.navbar-nav{
+  list-style: none;
+  height:100%;
+  padding: 0;
+  margin:0;
+  display:flex;
+  flex-direction: column;
+  /* gap: 5rem; */
+}
+
+.v-nav__toggler{
+  cursor: pointer;
+}
+.v-nav__toggler div {
+  width: 2.5rem;
+  height:0.2rem;
+  margin:0.4rem;
+  background:white;
+}
+.nav-item{
+  justify-self: center;
+  width: 100%;
+  color:white;
+  
+}
+.nav-item:nth-child(2){
+  margin-top: auto;
+}
+.nav-item:last-child{
+  margin-top: auto;
+}
+/* -------------------------horizontal Navbar ------------------------ */
+.nav{
+  /* position: relative; */
+  font-family: var(--reliable-demo);
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 8vh;
+  background: rgba(0,0,0,0.1);
+  position: fixed;
+  /* right: 0; */
+  width: 100%;
+}
+.nav__color{
+  background: black;
+
+}
+.nav__menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10rem;
+  margin-right: 9rem;
+  list-style: none;
+}
+.nav__toggler div {
+  width: 2.5rem;
+  height:0.2rem;
+  margin:0.4rem;
+  background:black;
+}
+.nav__toggler{
+  cursor: pointer;
+  display:none;
+}
+.extra__link{
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .v-navbar{
+    display: none;
+  }
+  main{
+    margin-left: 0;
+  }
+  .nav__toggler{
+    display:block;
+  }
+  .extra__link{
+    display: block;
+    font-family: var(--montserrat);
+  }
+  .nav__menu{
+    position:fixed;
+    top:7vh;
+    right:-10rem;
+    width:100%;
+    height:93vh;
+    background: var(--primary-color);
+    flex-direction: column;
+    transform: translateX(100%);
+    z-index: 999;
+  }
+  
+}
+.nav__active{
+  transform: translateX(0);
+}
+/* rotate toggler */
+.toggle .line1{
+  transform:rotate(-45deg) translate(-4px,5px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform:rotate(45deg) translate(-4px,-5px);
+}
+
+/* styling first video */
+.video__container{
+  position: relative;
+  height: 100vh;
+}
+@media screen and (max-width:768px) {
+  .video__container{
+    position: relative;
+    height: 75vh;
+  }
+}
+
+.nav__video{
+  position: absolute;
+  top: 0rem;
+  left:5rem;
+  z-index: -1;
+}
+/* Card Reliable */
+.mui__icon{
+  font-size: 3rem;
+  text-align: center;
+}
+.card__text{
+  font-size: 2.5rem;
+  font-family: var(--reliable-demo);
+  text-align: center;
+  margin: 1rem;
+}
+.card__icon{
+  font-size: 3rem;
 }
