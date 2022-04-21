@@ -1,17 +1,17 @@
 import React from 'react'
-// import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function CardReliable(props) {
-    console.log(props)
+
+export default function CardReliable({iconName,cardText}) {
+    
   return (
     <div>
         <div className='card__container'>
             <div className='card__icon'>
-                {/* <AutoGraphIcon className='mui__icon'/> */}
-                {/* <svg data-testid="AutoGraphIcon"></svg> */}
+                <FontAwesomeIcon icon={iconName} size="3x" />
             </div>
             <div className='card__text'>
-                <p>Physical <br />Programs</p>
+                <p>{cardText}</p>
             </div>
         </div>
     </div>
