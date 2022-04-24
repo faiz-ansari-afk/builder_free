@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-import imageBg from "../assets/sample.jpg";
+import imageBg from "../assets/sample2.webp";
+
 
 export default function VideoBlock() {
   return (
